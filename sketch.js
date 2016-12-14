@@ -2,6 +2,8 @@ var a;
 var b;
 var c;
 
+var aAudio;
+
 var currentLetter = 0;
 
 var randletter = 1;
@@ -15,8 +17,11 @@ var bcounter = 0;
 var cboolean = false;
 var ccounter = 0;
 
+
+
 function setup() {
   createCanvas(1200, 400);
+  aAudio = loadSound('assets/aAudio.wav');
 
   a = createSprite(200, 200);
   a.addAnimation("off", "assets/A_0.jpg");
@@ -37,15 +42,14 @@ function setup() {
   c.mouseActive = true;
 
   a.onMousePressed = function() {
-
-
     if (currentLetter == 1) {
-      aboolean = true;
-
+      aboolean = true
     }
-
-    // this.changeAnimation("normal");
-    // this.animation.goToFrame(this.animation.getLastFrame());
+    if (aAudio.isPlaying()){
+      aAudio.stop();
+    }else{
+      aAudio.play();
+    }
   }
 
   b.onMousePressed = function() {
