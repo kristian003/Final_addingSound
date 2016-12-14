@@ -19,10 +19,13 @@ var bcounter = 0;
 var cboolean = false;
 var ccounter = 0;
 
-
+var message = "WHACK-A-HOLE. Press A, B, or C to begin.";
 
 function setup() {
+
   createCanvas(1200, 400);
+
+
   aAudio = loadSound('assets/aAudio.wav');
   bAudio = loadSound('assets/bAudio.wav');
   cAudio = loadSound('assets/cAudio.wav');
@@ -49,9 +52,9 @@ function setup() {
     if (currentLetter == 1) {
       aboolean = true
     }
-    if (aAudio.isPlaying()){
+    if (aAudio.isPlaying()) {
       aAudio.stop();
-    }else{
+    } else {
       aAudio.play();
     }
   }
@@ -60,9 +63,9 @@ function setup() {
     if (currentLetter == 2) {
       bboolean = true;
     }
-    if (aAudio.isPlaying()){
+    if (aAudio.isPlaying()) {
       bAudio.stop();
-    }else{
+    } else {
       bAudio.play();
     }
   }
@@ -71,11 +74,11 @@ function setup() {
     if (currentLetter == 3) {
       cboolean = true;
     }
-    if (aAudio.isPlaying()){
+    if (aAudio.isPlaying()) {
       cAudio.stop();
-    }else{
+    } else {
       cAudio.play();
-  }
+    }
   }
 
   randletter = int(random(1, 4));
@@ -83,7 +86,11 @@ function setup() {
 }
 
 function draw() {
-  background(255, 255, 255);
+
+  // background(255, 255, 255);
+  // background(255);
+  //fill(0);
+
   drawSprites();
   a.animation.looping = false;
   if (aboolean == true || randletter == 1) {
@@ -137,4 +144,6 @@ function draw() {
     }
   }
 
+  textSize(32);
+  text(message, 75, 30,700,100);
 }
