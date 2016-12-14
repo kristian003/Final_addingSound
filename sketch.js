@@ -19,7 +19,7 @@ var bcounter = 0;
 var cboolean = false;
 var ccounter = 0;
 
-var message = "WHACK-A-HOLE. Press A, B, or C to begin.";
+var message = "WHACK-A-HOLE. Press A, B, or, C to begin.";
 
 function setup() {
 
