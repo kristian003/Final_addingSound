@@ -3,6 +3,8 @@ var b;
 var c;
 
 var aAudio;
+var bAudio;
+var cAudio;
 
 var currentLetter = 0;
 
@@ -22,6 +24,8 @@ var ccounter = 0;
 function setup() {
   createCanvas(1200, 400);
   aAudio = loadSound('assets/aAudio.wav');
+  bAudio = loadSound('assets/bAudio.wav');
+  cAudio = loadSound('assets/cAudio.wav');
 
   a = createSprite(200, 200);
   a.addAnimation("off", "assets/A_0.jpg");
@@ -56,12 +60,22 @@ function setup() {
     if (currentLetter == 2) {
       bboolean = true;
     }
+    if (aAudio.isPlaying()){
+      bAudio.stop();
+    }else{
+      bAudio.play();
+    }
   }
 
   c.onMousePressed = function() {
     if (currentLetter == 3) {
       cboolean = true;
     }
+    if (aAudio.isPlaying()){
+      cAudio.stop();
+    }else{
+      cAudio.play();
+  }
   }
 
   randletter = int(random(1, 4));
