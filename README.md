@@ -5,4 +5,4 @@ Create an app for toddlers
 • As each character is pressed, sound of letter will be heard.
 • Each letter will randomly appear when pressed.
 • Letter will pop out of hole and hold until it's pressed.
-• Once pressed, letter will go down and randomly appear in another whole.
+• Once pressed, letter will go down and randomly appear in another hole.
